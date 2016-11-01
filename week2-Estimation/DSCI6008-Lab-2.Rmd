@@ -1,0 +1,35 @@
+# Lab 2: Expectation-Maximization (EM) Algorithm
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+For today's lab, we will make use of the EM algorithm to:  
+
+* Estimate parameters in a two-component Normal mixture model
+* Make estimations with missing data
+
+Your work should be submitted in a .Rmd file - [a Markdown file created in RStudio](http://rmarkdown.rstudio.com/lesson-1.html).  
+
+## Two-Component Mixture Model
+
+Continue from the example we looked at in class, and implement the EM algorithm to estimate the parameter $\theta = (w, \mu_1, \sigma_1^2, \mu_2, \sigma_2^2)$. 
+
+
+```{r}
+# Remember to set the current working directory
+# To read in the data
+mdata = read.csv("2.3-EM/data/mixdata.csv")
+head(mdata)
+```
+```{r}
+summary(mdata)
+
+plot(density(mdata$x))
+```
+
+
+## Analyzing Incomplete Data  
+
+Estimate the average income with the incomplete data following the steps we laid out in class. The data is in `2.4-MissingData/data/missingdata.csv`.
+
