@@ -1,0 +1,13 @@
+Useful sources
+
+https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/
+
+https://engineering.purdue.edu/~ipollak/ece302/FALL09/notes/Bayesian_Inference_4_LMS.pdf
+
+https://ocw.mit.edu/courses/sloan-school-of-management/15-097-prediction-machine-learning-and-statistics-spring-2012/lecture-notes/MIT15_097S12_lec15.pdf
+
+http://people.stat.sc.edu/Hitchcock/stat535slidesday18.pdf
+
+http://www.johndcook.com/blog/conjugate_prior_diagram/#postnormalmean
+
+http://www.public.iastate.edu/~alicia/ENAR2006/Notes(4ps).pdf
