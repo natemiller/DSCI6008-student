@@ -42,9 +42,12 @@ Supplementary Materials
 There is no required textbook for this course. Here is a list of recommended readings:
 
 - Machine Learning: A Probabilistic Perspective, by Kevin P. Murphy
+- Software for Data Analysis: Programming with R, by John M. Chambers
 - Bayesian Methods for Hackers, by Cameron Davidson-Pilon
 - Bayesian Data Analysis, by Andrew Gelman, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, Donald B. Rubin
-Introduction to Time Series and Forecasting, by P. Brockwell and R. Davis
+- Introduction to Time Series and Forecasting, by P. Brockwell and R. Davis
+- Time Series Analysis and Its Applications: With R Examples, by Robert H. Shumway and David S. Stoffer
+- Statistical Analysis with Missing Data, by Roderick J. A. Little and Donald B. Rubin
 
 
 Course Requirements
@@ -60,15 +63,10 @@ You will learn more easily and enjoyably if you actively participate. Student co
 
 ### Lab Exercises
 
-Participation in and completion of lab exercises is a requirement for this course. Each unit includes exercises to provide practice applying techniques discussed in class and to reveal deficiencies in understanding in preparation for skills tests.  Some of these will be individual efforts, some will be pairs and group programming.  We will use the aggregate efforts of the class to test a wide variety of different approaches to the problems we will address.  That way the class members will learn from the efforts of their classmates.  It is essential to this process that you stay up to speed on the class so you can be a contributor as well as being a better learner.  
-
+Participation in and completion of lab exercises is a requirement for this course. Each unit includes exercises to provide practice applying techniques discussed in class and to reveal deficiencies in understanding in preparation for skills tests.  Some of these will be individual efforts, some will be pairs and group programming.  
 
 ### RATs
 The readiness assessment tests (RATs) are intended to ensure that students comprehended the material consumed between classes. Students unsure of their comprehension should bring questions to be addressed before the individual RAT. 
-
-
-### Programming Exercises
-The RATs are meant to assess the first three levels of [Bloom's Taxonomy](http://en.wikipedia.org/wiki/Bloom's_taxonomy#Cognitive), namely knowledge, comprehension, and analysis. The exercises are meant to develop the latter three levels: analysis, synthesis, and evaluation.
 
 ### Mastery Tracking:
 
@@ -102,7 +100,17 @@ The University expects that all students will learn in an environment where they
 
 Students who are dishonest in any class assignment or exam will receive an "F" in this course. More information regarding UNH’s official academic integrity policies are outlined in [here](http://www.newhaven.edu/334887.pdf).
 
-___
+Grading
+---
+
+The breakdown of the grade will be as follows:
+
+- RATs: 20%
+- Labs: 40%
+- Final Project: 30%
+- Participation: 10%
+
+
 Tentative Schedule
 ---
 
@@ -112,40 +120,40 @@ Tentative Schedule
 	* 1.3: Data manipulation
 	* 1.4: Modeling in R
 
-* Week 2 - Experimental design & A/B testing
-	* 2.1: Design of experiments
-	* 2.2: Analysis of experiments
-	* 2.3: A/B testing
-	* 2.4: Multi-arm bandit review
-
-* Week 3 - Time series analysis
-	* 3.1: The components of time series data
-	* 3.2: Exponential smoothing
-	* 3.3: ARIMA models
-	* 3.4: Review I
-
-* Week 4 - Bayesian data analysis
-	* 4.1: Prior, likelihood and posterior
-	* 4.2: Basic Bayesian modeling
-	* 4.3: Bayesian hypothesis tests
-	* 4.4: Bayesian structural time series models
-
-* Week 5 - Stochastic processes
-	* 5.1: Markov chains
-	* 5.2: Gibbs sampling
-	* 5.3: Markov chain Monte Carlo (MCMC)
-	* 5.4: Review II
-
-* Week 6 - Probability review & estimation methods
+* Week 2 - Probability review & estimation methods
 	* 6.1: Probability review
 	* 6.2: Maximum likelihood estimation (MLE), method of moments (MOM)
 	* 6.3: Maximum a posteriori (MAP) estimation
 	* 6.4: Expectation–maximization (EM) algorithm
 
-* Week 7 -  Statistics review & case studies
+* Week 3 - Experimental design & A/B testing
+	* 2.1: Design of experiments
+	* 2.2: Analysis of experiments
+	* 2.3: Bayesian A/B testing
+	* 2.4: Multi-arm bandit
+
+* Week 4 - Bayesian data analysis
+	* 4.1: Prior, likelihood and posterior
+	* 4.2: Basic Bayesian modeling
+	* 4.3: Bayesian hypothesis tests
+	* 4.4: Bayesian regression
+
+* Week 5 - Time series analysis
+	* 3.1: The components of time series data
+	* 3.2: Exponential smoothing
+	* 3.3: ARIMA models
+	* 3.4: Bayesian Structural Time Series (BSTS) model
+
+* Week 6 - Stochastic processes
+	* 5.1: Markov chains
+	* 5.2: Gibbs sampling
+	* 5.3: Markov chain Monte Carlo (MCMC)
+	* 5.4: Hidden Markov model (HMM)
+
+* Week 7 - Statistics review & case studies
 	* 7.1: Regression analysis
 	* 7.2: Case study I
 	* 7.3: Case study II
 	* 7.4: Review III
 
-* Week 8 -  Project presentations
+* Week 8 - Project presentations
