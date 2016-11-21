@@ -1,0 +1,24 @@
+
+# Lab 5: Time Series Analysis
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+A company is launching a new change to their product. They have launched the product change in country I before they launch it in country II.
+
+The data in `data/revenue.csv` shows their daily revenue in the two countries. The change occurred in country I on 9/1/16. It has not occurred in country II yet.
+
+Your job is to:
+
+1. Estimate the impact of the product change on the revenue in country I (`revenue1`).
+    * Define what metric(s) you want to use to measure the impact
+    * Predict what the revenue would be had there been no product change between 9/1/16 - 9/10/16
+    * Estimate the value(s) of your metric(s)
+
+2. Predict the impact of the product change on the revenue in country II (`revenue2`) if they had launched the same product change between 9/1/16 - 9/10/16.
+    * Predict the revenue in country II between 9/1/16 - 9/10/16 had there been a product change
+    * Estimate the impact based on your predictions
+
+
+Your work should be submitted in a `.Rmd` file.
