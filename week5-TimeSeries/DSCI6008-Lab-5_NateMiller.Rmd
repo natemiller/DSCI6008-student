@@ -1,0 +1,88 @@
+
+# Lab 5: Time Series Analysis
+#### Nate Miller
+
+A company is launching a new change to their product. They have launched the product change in country I before they launch it in country II.
+
+The data in `data/revenue.csv` shows their daily revenue in the two countries. The change occurred in country I on 9/1/16. It has not occurred in country II yet.
+
+Your job is to:
+
+1. Estimate the impact of the product change on the revenue in country I (`revenue1`).
+    * Define what metric(s) you want to use to measure the impact
+    * Predict what the revenue would be had there been no product change between 9/1/16 - 9/10/16
+    * Estimate the value(s) of your metric(s)
+
+```{r, message = FALSE}
+library(forecast)
+```
+
+```{r}
+revenue = read.csv("~/GalvanizeGitHub/DSCI6008-student/DSCI6008-student/week5-TimeSeries/data/revenue.csv", stringsAsFactors=FALSE)
+
+```
+To measure the impact we can calculate the sum of the difference between the revenue with the product release (10 days post product release) and the upper 95% limit for the forecast without product release. 
+
+```{r}
+revenue1 <- ts(revenue$revenue1, frequency=7)
+tsdisplay(revenue1)
+```
+
+Remove the data post product release and predict revenue without product release
+```{r}
+reduced = revenue1[c(seq(0,length(revenue1) -10))]
+```
+
+Run the forecast to predict the revenue without the product release.
+```{r}
+fit_red <- ets(reduced)
+fc_red <- forecast(fit_red, h=10)
+plot(fc_red)
+```
+
+The mean forecasted revenue without the product release is 13.1.
+The 95% upper and lower bounds for this forecast are shown below.
+```{r}
+fc_red$upper[,2]
+fc_red$lower[,2]
+```
+
+The actual revenue for the 10 days post product release are
+```{r}
+with_prod = revenue$revenue1[c(seq(50,59))]
+with_prod
+```
+
+Looking at the difference between the revenue with the product release and the upper 95% forecast for revenue without product release we can see the change in revenue due to the product release. 
+```{r}
+product_gains = with_prod - fc_red$upper[,2]
+product_gains
+```
+What we see is that initially (5 days post-product release) there is no significance difference between the revenue with and without the product release, but during the final 5 days, the product release resulted in higher revenue. 
+
+```{r}
+sum(product_gains)
+```
+
+Checking for autocorrelation between data points we can see that there isn't a strong signal for autocorrellation (both visually and for the Box_Ljung test).
+```{r}
+acf(fc_red$residuals, lag.max=20)
+Box.test(fc_red$residuals, lag=20, type="Ljung-Box")
+```
+
+
+We can also look to see the forecast from an ARIMA model. I did not include a seasonal component given that the data was not that long. I ended up with a very similar output form the ARIMA model and similar conclusions.
+```{r}
+fit_noseason = auto.arima(reduced, seasonal=FALSE)
+summary(fit_noseason)
+plot(forecast(fit_noseason,h=10))
+```
+
+
+
+2. Predict the impact of the product change on the revenue in country II (`revenue2`) if they had launched the same product change between 9/1/16 - 9/10/16.
+    * Predict the revenue in country II between 9/1/16 - 9/10/16 had there been a product change
+    * Estimate the impact based on your predictions
+
+
+Your work should be submitted in a `.Rmd` file.

@@ -16,6 +16,52 @@ Your job is to:
     * Predict what the revenue would be had there been no product change between 9/1/16 - 9/10/16
     * Estimate the value(s) of your metric(s)
 
+```{r}
+revenue <- read.csv("~/GalvanizeGitHub/DSCI6008-student/DSCI6008-student/week5-TimeSeries/data/revenue.csv", stringsAsFactors=FALSE)
+
+```
+To measure the impact we can calculate the difference between the revenue on the final day of data (10 days post product release) and the revenue forecast for 10 days post product release.
+
+
+The revenue on the final day of data is 21.94.
+```{r}
+revenue$revenue1[length(revenue$revenue1)]
+```
+
+Remove the data post product release and predict revenue without product release
+```{r}
+reduced = y[c(seq(0,length(y) -10))]
+```
+
+Rerun the forecast to predict the revenue
+```{r}
+fit_red <- ets(reduced)
+fc_red <- forecast(fit_red, h=10)
+plot(fc_red)
+```
+
+The forecasted revenue without the product release is 13.1.
+The upper and lower bounds for this forecast are shown below.
+```{r}
+fc_red$upper
+fc_red$lower
+```
+
+The actual revenue for the 10 days post product release are
+```{r}
+with_prod = y[c(seq(50,59))]
+with_prod
+```
+So the product release appears to have bumped the revenue up by 21.94 - 13.1 = 8.84
+
+```{r}
+acf(fc$residuals, lag.max=20)
+Box.test(fc$residuals, lag=20, type="Ljung-Box")
+```
+
+
+
+
 2. Predict the impact of the product change on the revenue in country II (`revenue2`) if they had launched the same product change between 9/1/16 - 9/10/16.
     * Predict the revenue in country II between 9/1/16 - 9/10/16 had there been a product change
     * Estimate the impact based on your predictions
